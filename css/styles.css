@@ -48,6 +48,16 @@ body {
     padding-right: 15px;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
 
 /* ============ Header ==========*/
 .logo {
@@ -144,7 +154,7 @@ body {
 }
 
 .head {
-    border-bottom: 1px solid #E7E9FC;
+    border-bottom: 1px solid var(--color-footer-text);
     box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
@@ -490,14 +500,19 @@ body {
 }
 
 .footer-f-input {
-    max-width: 264 px;
+    width: 264px;
     height: 40px;
     padding: 8px 16px;
     outline: none;
     border: 1px solid rgba(255, 255, 255, 0.3);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
-    background: #2E2F42;
+    background: transparent;
+
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--color-footer-text);
 }
 
 .footer-f-btn {
@@ -510,9 +525,9 @@ body {
     align-items: center;
     text-align: center;
     letter-spacing: 0.04em;
-    color: #FFFFFF;
+    color: var(--primary-fon-color);
     padding: 8px 24px;
-    background: #4D5AE5;
+    background: var(--color-logo-btn-pmenu);
     border-radius: 4px;
     border: transparent;
     cursor: pointer;
@@ -750,7 +765,7 @@ body {
     text-align: center;
     letter-spacing: 0.04em;
     padding: 16px 32px;
-    color: #FFFFFF;
+    color: var(--primary-fon-color);
     min-width: 169px;
     background: var(--color-logo-btn-pmenu);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -761,9 +776,10 @@ body {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     margin-left: 50%;
     transform: translateX(-50%);
+    cursor: pointer;
 }
 
-span {
+.modal-form span {
     display: block;
     font-size: 12px;
     line-height: 1.33;
@@ -796,7 +812,7 @@ span {
 .input-svg {
     display: block;
     position: absolute;
-    fill: #2E2F42;
+    fill: var(--color-menu-h);
     top: 50%;
     left: 16px;
     transform: translateY(-50%);
@@ -831,18 +847,35 @@ span {
     color: rgba(117, 117, 117, 0.5);
 }
 
-.policy-text {
+.checkbox-text {
+    display: flex;
     font-size: 12px;
     line-height: 1.33;
     letter-spacing: 0.04em;
     color: #757575;
-}
-
-.zxc {
     margin-bottom: 24px;
+    align-items: center;
 }
 
-.policy-text a {
-    text-decoration-line: underline;
+.checkbox-text a {
     color: var(--color-logo-btn-pmenu);
+}
+
+.checkbox-feik-icon {
+    width: 16px;
+    height: 16px;
+    border: 1.25px solid #2E2F42;
+    border-radius: 2px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.checkbox-icon {
+    fill: var(--color-back-fonteam-logo2-pmenubtn);
+    margin-left: 2px;
+}
+
+.check:checked+.checkbox-feik-icon {
+    background: var(--color-hover-focus);
+    border: 1.25px solid var(--color-hover-focus);
 }
