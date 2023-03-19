@@ -482,7 +482,7 @@ body {
 }
 
 .footer-form {
-    margin-left: 80px;
+    margin-left: auto;
 }
 
 .footer-f-title {
@@ -503,7 +503,6 @@ body {
     width: 264px;
     height: 40px;
     padding: 8px 16px;
-    outline: none;
     border: 1px solid rgba(255, 255, 255, 0.3);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
@@ -513,6 +512,14 @@ body {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--color-footer-text);
+}
+
+.footer-f-input::placeholder {
+    font-size: 12px;
+    line-height: 1.5;
+    align-items: center;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-f-btn {
@@ -541,6 +548,7 @@ body {
     margin-left: 16px;
 }
 
+.footer-f-btn:hover,
 .footer-f-btn:focus {
     background-color: var(--color-hover-focus);
 }
@@ -696,7 +704,6 @@ body {
 .modal {
     position: absolute;
     width: 408px;
-    /* height: 584px; */
     top: 50%;
     left: 50%;
     padding: 72px 24px 24px 24px;
@@ -774,12 +781,18 @@ body {
     transition-property: background-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    margin-left: 50%;
-    transform: translateX(-50%);
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
     cursor: pointer;
 }
 
-.modal-form span {
+.send-btn:hover,
+.send-btn:focus {
+    background-color: var(--color-hover-focus);
+}
+
+.modal-label-text {
     display: block;
     font-size: 12px;
     line-height: 1.33;
@@ -787,6 +800,7 @@ body {
     color: #8E8F99;
     margin-bottom: 4px;
 }
+
 
 .form-label {
     display: block;
@@ -834,6 +848,7 @@ body {
 }
 
 .form-textarea .form-input {
+    display: block;
     font-size: 12px;
     line-height: 1.33;
     letter-spacing: 0.04em;
@@ -844,6 +859,9 @@ body {
 }
 
 .form-textarea::placeholder {
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
     color: rgba(117, 117, 117, 0.5);
 }
 
@@ -871,11 +889,17 @@ body {
 }
 
 .checkbox-icon {
-    fill: var(--color-back-fonteam-logo2-pmenubtn);
+    opacity: 0;
+    fill: #F4F4FD;
     margin-left: 2px;
+}
+
+.check:checked+.checkbox-feik-icon .checkbox-icon {
+    opacity: 1;
 }
 
 .check:checked+.checkbox-feik-icon {
     background: var(--color-hover-focus);
     border: 1.25px solid var(--color-hover-focus);
+
 }
