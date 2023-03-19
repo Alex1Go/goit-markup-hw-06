@@ -494,7 +494,7 @@ body {
     margin-bottom: 16px;
 }
 
-.footer-meil-box {
+.footer-mail-box {
     display: flex;
     gap: 24px;
 }
@@ -886,12 +886,15 @@ body {
     border-radius: 2px;
     margin-right: 8px;
     cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center
 }
 
 .checkbox-icon {
     opacity: 0;
     fill: #F4F4FD;
-    margin-left: 2px;
+
 }
 
 .check:checked+.checkbox-feik-icon .checkbox-icon {
